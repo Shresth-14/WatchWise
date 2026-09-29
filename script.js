@@ -160,6 +160,16 @@ if (searchToggle && searchPopover) {
     }
   });
 
+  const openSearch = () => {
+    searchPopover.classList.add("open");
+    searchInput.focus();
+  };
+
+  const heroSearch = document.getElementById("heroSearch");
+  if (heroSearch) {
+    heroSearch.addEventListener("click", openSearch);
+  }
+
   document.addEventListener("click", (event) => {
     if (
       !searchPopover.contains(event.target) &&
